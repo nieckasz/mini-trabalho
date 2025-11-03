@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Notas</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Notas</h1>
+
+        <!-- Campo de input e checkbox para Urgente -->
+        <input type="text" id="notaInput" placeholder="Digite sua nota aqui" class="input-note">
+        
+        <div class="checkbox-container">
+            <input type="checkbox" id="checkboxUrgente" class="checkbox-urgente">
+            <label for="checkboxUrgente">Urgente</label>
+        </div>
+
+        <button id="adicionarBtn" class="add-btn">Adicionar</button>
+
+        <!-- Caixa para notas -->
+        <div class="nota-box-container">
+            <!-- Caixa de notas urgentes -->
+            <div id="urgenteBox" class="nota-box urgente-box">
+                <h2>Notas Urgentes</h2>
+                <ul id="listaUrgente" class="nota-list"></ul>
+                <button id="removerUltimaUrgente" class="remove-last-btn">Remover Última Nota</button>
+            </div>
+
+            <!-- Caixa de notas não urgentes -->
+            <div id="naoUrgenteBox" class="nota-box nao-urgente-box">
+                <h2>Notas Não Urgentes</h2>
+                <ul id="listaNaoUrgente" class="nota-list"></ul>
+                <button id="removerUltimaNaoUrgente" class="remove-last-btn">Remover Última Nota</button>
+            </div>
+        </div>
+
+        <button id="apagarTudoBtn" class="clear-btn">Apagar Tudo</button>
+    </div>
+
+    <script src="jaca.js"></script>
+</body>
+</html>

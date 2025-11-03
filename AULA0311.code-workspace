@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../DOM/css"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "AULA0311"
+	}
+}
