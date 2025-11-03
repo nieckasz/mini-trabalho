@@ -8,12 +8,12 @@ const checkboxUrgente = document.getElementById('checkboxUrgente');
 const removerUltimaNaoUrgente = document.getElementById('removerUltimaNaoUrgente');
 const removerUltimaUrgente = document.getElementById('removerUltimaUrgente');
 
-// Cores das notas (fixas)
+
 const cores = ["azul", "verde", "roxo"];
 let indiceCorNaoUrgente = 0;
 let indiceCorUrgente = 0;
 
-// Função para adicionar nota
+
 adicionarBtn.addEventListener('click', () => {
     const texto = notaInput.value.trim();
     if (texto === "") {
@@ -21,10 +21,8 @@ adicionarBtn.addEventListener('click', () => {
         return;
     }
 
-    // Verifica se a nota é urgente
     const urgente = checkboxUrgente.checked;
 
-    // Determina a cor da nota dependendo da caixa
     let corNota;
     if (urgente) {
         corNota = cores[indiceCorUrgente];
@@ -38,19 +36,19 @@ adicionarBtn.addEventListener('click', () => {
     li.classList.add('nota-item', corNota);
     li.textContent = texto;
 
-    // Adiciona a nota na lista correta
+  
     if (urgente) {
         listaUrgente.appendChild(li);
     } else {
         listaNaoUrgente.appendChild(li);
     }
 
-    // Limpa o campo de input
+
     notaInput.value = "";
-    checkboxUrgente.checked = false;  // Desmarca a checkbox após adicionar
+    checkboxUrgente.checked = false;  
 });
 
-// Remover última nota NÃO URGENTE
+
 removerUltimaNaoUrgente.addEventListener('click', () => {
     const notas = listaNaoUrgente.querySelectorAll('li');
     if (notas.length > 0) {
@@ -60,7 +58,7 @@ removerUltimaNaoUrgente.addEventListener('click', () => {
     }
 });
 
-// Remover última nota URGENTE
+
 removerUltimaUrgente.addEventListener('click', () => {
     const notas = listaUrgente.querySelectorAll('li');
     if (notas.length > 0) {
@@ -70,7 +68,7 @@ removerUltimaUrgente.addEventListener('click', () => {
     }
 });
 
-// Apagar todas as notas
+s
 apagarTudoBtn.addEventListener('click', () => {
     listaNaoUrgente.innerHTML = "";
     listaUrgente.innerHTML = "";
