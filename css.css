@@ -20,7 +20,7 @@ body {
 
 /* Título */
 h1 {
-    text-align: center;
+    
     margin-bottom: 20px;
     background-color: #deffdb;
 }
@@ -34,7 +34,7 @@ h1 {
     border-radius: 4px;
 }
 
-/*chesbox*/
+
 .checkbox-container {
     text-align: left;
     margin-bottom: 10px;

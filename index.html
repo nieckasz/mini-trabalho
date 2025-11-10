@@ -8,38 +8,39 @@
 </head>
 <body>
     <div class="container">
-        <h1>Lista de notas</h1>
+            <h1>Lista de notas</h1>
 
       
         <input type="text" id="notaInput" class="input-note">
         
         <div class="checkbox-container">
             <input type="checkbox" id="checkboxUrgente" class="checkbox-urgente">
-            <label for="checkboxUrgente">Urgente</label>
+              <label for="checkboxUrgente">Urgente</label>
         </div>
+ 
+           <button id="adicionarBtn" class="add-btn">Adicionar</button>
 
-        <button id="adicionarBtn" class="add-btn">Adicionar</button>
-
-        
-        <div class="nota-box-container">
+         
+          <div class="nota-box-container">
             
             <div id="urgenteBox" class="nota-box urgente-box">
                 <h2>Notas Urgentes</h2>
-                <ul id="listaUrgente" class="nota-list"></ul>
-                <button id="removerUltimaUrgente" class="remove-last-btn">Remover Última Nota</button>
-            </div>
+                    <ul id="listaUrgente" class="nota-list"></ul>
+                    <button id="removerUltimaUrgente" class="remove-last-btn">Remover Última Nota</button>
+                 </div>
 
             
             <div id="naoUrgenteBox" class="nota-box nao-urgente-box">
                 <h2>Notas Não Urgentes</h2>
-                <ul id="listaNaoUrgente" class="nota-list"></ul>
-                <button id="removerUltimaNaoUrgente" class="remove-last-btn">Remover Última Nota</button>
+   <ul id="listaNaoUrgente" class="nota-list"></ul>
+                     <button id="removerUltimaNaoUrgente" class="remove-last-btn">Remover Última Nota</button>
             </div>
         </div>
 
-        <button id="apagarTudoBtn" class="clear-btn">Apagar Tudo</button>
-    </div>
+        <button id="apagarTudoBtnNao" class="clear-btn">Apagar Tudo Não Importantes</button>
+              <button id="apagarTudoBtn" class="clear-btn">Apagar Notas Importantes</button>
+     </div>
 
     <script src="jaca.js"></script>
-</body>
+    </body>
 </html>

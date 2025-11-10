@@ -10,8 +10,8 @@ const removerUltimaUrgente = document.getElementById('removerUltimaUrgente');
 
 
 const cores = ["azul", "verde", "roxo"];
-let indiceCorNaoUrgente = 0;
-let indiceCorUrgente = 0;
+let indiceCorNaoUrgente = 1;
+let indiceCorUrgente = 1;
 
 
 adicionarBtn.addEventListener('click', () => {
@@ -23,14 +23,14 @@ adicionarBtn.addEventListener('click', () => {
 
     const urgente = checkboxUrgente.checked;
 
-    let corNota;
-    if (urgente) {
-        corNota = cores[indiceCorUrgente];
-        indiceCorUrgente = (indiceCorUrgente + 1) % cores.length; // Move para a próxima cor (circular)
-    } else {
-        corNota = cores[indiceCorNaoUrgente];
-        indiceCorNaoUrgente = (indiceCorNaoUrgente + 1) % cores.length; // Move para a próxima cor (circular)
-    }
+   let corNota;
+if (urgente) {
+    const notasAtuais = listaUrgente.querySelectorAll('li').length;
+    corNota = cores[notasAtuais % cores.length];
+} else {
+    const notasAtuais = listaNaoUrgente.querySelectorAll('li').length;
+    corNota = cores[notasAtuais % cores.length];
+}
 
     const li = document.createElement('li');
     li.classList.add('nota-item', corNota);
@@ -68,8 +68,14 @@ removerUltimaUrgente.addEventListener('click', () => {
     }
 });
 
-s
+
 apagarTudoBtn.addEventListener('click', () => {
-    listaNaoUrgente.innerHTML = "";
+  
     listaUrgente.innerHTML = "";
+    
+});
+apagarTudoBtnNao.addEventListener('click', () => {
+    listaNaoUrgente.innerHTML = "";
+    
+   
 });
