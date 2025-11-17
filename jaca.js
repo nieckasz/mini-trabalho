@@ -7,6 +7,7 @@ const apagarTudoBtn = document.getElementById('apagarTudoBtn');
 const checkboxUrgente = document.getElementById('checkboxUrgente');
 const removerUltimaNaoUrgente = document.getElementById('removerUltimaNaoUrgente');
 const removerUltimaUrgente = document.getElementById('removerUltimaUrgente');
+const apagarTudoBtnNao = document.getElementById('apagarTudoBtnNao')
 
 
 const cores = ["azul", "verde", "roxo"];
@@ -18,29 +19,29 @@ adicionarBtn.addEventListener('click', () => {
     const texto = notaInput.value.trim();
     if (texto === "") {
         alert("Digite uma nota!");
-        return;
+              return;
     }
 
     const urgente = checkboxUrgente.checked;
 
    let corNota;
-if (urgente) {
+       if (urgente) {
     const notasAtuais = listaUrgente.querySelectorAll('li').length;
     corNota = cores[notasAtuais % cores.length];
-} else {
-    const notasAtuais = listaNaoUrgente.querySelectorAll('li').length;
-    corNota = cores[notasAtuais % cores.length];
+}       else {
+      const notasAtuais = listaNaoUrgente.querySelectorAll('li').length;
+          corNota = cores[notasAtuais % cores.length];
 }
 
     const li = document.createElement('li');
     li.classList.add('nota-item', corNota);
-    li.textContent = texto;
+         li.textContent = texto;
 
   
-    if (urgente) {
+        if (urgente) {
         listaUrgente.appendChild(li);
     } else {
-        listaNaoUrgente.appendChild(li);
+           listaNaoUrgente.appendChild(li);
     }
 
 
@@ -70,12 +71,21 @@ removerUltimaUrgente.addEventListener('click', () => {
 
 
 apagarTudoBtn.addEventListener('click', () => {
-  
-    listaUrgente.innerHTML = "";
+      const notas = listaUrgente.querySelectorAll('li');
+    if (notas.length > 0) {
+         listaUrgente.innerHTML = "";
+    } else {
+        alert("Não há notas urgentes para remover.");
+    }
+   
     
 });
 apagarTudoBtnNao.addEventListener('click', () => {
-    listaNaoUrgente.innerHTML = "";
-    
+    const notas = listaNaoUrgente.querySelectorAll('li');
+    if (notas.length > 0) {
+         listaNaoUrgente.innerHTML = "";
+    } else {
+        alert("Não há notas não urgentes para remover.");
+    }
    
 });
